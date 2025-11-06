@@ -1,0 +1,20 @@
+- pipeline.id: club
+  path.config: "/usr/share/logstash/pipeline/club.conf"
+
+- pipeline.id: match
+  path.config: "/usr/share/logstash/pipeline/match.conf"
+
+- pipeline.id: player
+  path.config: "/usr/share/logstash/pipeline/player.conf"
+
+- pipeline.id: player_point
+  path.config: "/usr/share/logstash/pipeline/player_point.conf"
+
+- pipeline.id: player_result
+  path.config: "/usr/share/logstash/pipeline/player_result.conf"
+
+- pipeline.id: team
+  path.config: "/usr/share/logstash/pipeline/team.conf"
+
+- pipeline.id: user
+  path.config: "/usr/share/logstash/pipeline/user.conf"

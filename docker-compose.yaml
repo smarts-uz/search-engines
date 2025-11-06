@@ -19,9 +19,11 @@ services:
     container_name: logstash
     volumes:
       - ./logstash/drivers/postgresql.jar:/usr/share/logstash/config/postgresql.jar
+      - ./logstash/pipeline.yml:/usr/share/logstash/config/pipelines.yml
       - ./logstash/pipeline/:/usr/share/logstash/pipeline/
     depends_on:
       - elasticsearch
+
 
 volumes:
   esdata:

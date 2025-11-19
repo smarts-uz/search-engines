@@ -62,7 +62,7 @@ export async function incrementalSync() {
 
       // 2️⃣ Faqat o‘zgargan yoki yangi yozuvlarni olamiz
       const { rows } = await pgPool.query(
-        `SELECT * FROM ${table} WHERE updated_at > $1`,
+        `SELECT * FROM "${table}" WHERE updated_at > $1`,
         [lastSyncTime]
       );
 

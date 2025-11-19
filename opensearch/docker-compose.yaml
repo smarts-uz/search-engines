@@ -22,7 +22,9 @@ services:
     networks:
       - opensearch-net
   sync-service:
-    image: mukhtarovich/opensearch-sync-service:1.2
+    build:
+      context: ./sync
+      dockerfile: Dockerfile
     container_name: sync-service
     depends_on:
       - opensearch
@@ -33,7 +35,7 @@ services:
       - PGDATABASE=postgres
       - PGPORT=5444
       - OPENSEARCH_NODE=http://opensearch:9200
-      - TABLES_TO_SYNC=player,club,team,user,match
+      - TABLES_TO_SYNC=player,club,team
     networks:
       - opensearch-net
 

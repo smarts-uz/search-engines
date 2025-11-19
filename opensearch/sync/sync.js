@@ -49,7 +49,7 @@ export async function incrementalSync() {
           },
           mappings: {
             properties: {
-              name: { type: 'text', analyzer: 'translit_analyzer',search_analyzer: 'translit_analyzer'},
+              name: { type: 'text', analyzer: 'translit_analyzer',search_analyzer: 'translit_analyzer',fielddata:true},
               geo: { type: 'geo_point' },
               agent: { type: 'object' }
             }

@@ -49,7 +49,7 @@ export async function incrementalSync() {
           },
           mappings: {
             properties: {
-              name: { type: 'text', analyzer: 'translit_analyzer' },
+              name: { type: 'text', analyzer: 'translit_analyzer',search_analyzer: 'translit_analyzer'},
               geo: { type: 'geo_point' },
               agent: { type: 'object' }
             }
@@ -71,7 +71,7 @@ export async function incrementalSync() {
         const sample = updatedRows[0];
         for (const key of Object.keys(sample)) {
           if (key === 'geo') schema[key] = 'geo_point';
-          else if (key === 'agent') schema[key] = 'object';
+          else if (key === 'agent') schema[key] = 'agent';
           else schema[key] = 'other';
         }
       }

@@ -29,8 +29,6 @@ services:
       context: ./sync
       dockerfile: Dockerfile
     container_name: sync-service
-    depends_on:
-      - opensearch
     environment:
       - PGUSER=postgres
       - PGPASSWORD=c21hcnRza29tb2x0ZWFt
@@ -39,7 +37,7 @@ services:
       - PGPORT=5444
       - OPENSEARCH_NODE=http://opensearch:9200
       - TABLES_TO_SYNC=player,club,team,user,match,player_result,player_point
-      - PG_LISTEN_CHANNEL=table_changes
+      - PG_LISTEN_CHANNEL=komol
     networks:
       - opensearch-net
 
